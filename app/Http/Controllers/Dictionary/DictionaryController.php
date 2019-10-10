@@ -3,8 +3,10 @@
 use App\Dictionary;
 use App\Http\Controllers\Controller;
 use App\Imports\DictionaryImport;
-use Illuminate\Http\Request;
+use App\Services\DictionaryServices;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Http\Request;
+use Illuminate\Session;
 
 
 class DictionaryController extends Controller
@@ -18,18 +20,18 @@ class DictionaryController extends Controller
 
     public function store(Request $request)
     {
-        $word            = $request->input('word');
-        $translated_word = $request->input('translated_word');
+        $service = new DictionaryServices();
+        $service->store($request);
 
-        $dictionaryWords                  = new Dictionary();
-        $dictionaryWords->word            = $word;
-        $dictionaryWords->translated_word = $translated_word;
-
-        $dictionaryWords->save();
+        \Session::put('flash_message', 'The word was add to the dictionary');
+        return redirect('home');
     }
 
-    public function storeFromExcel(){
+    public function storeFromExcel()
+    {
         Excel::import(new DictionaryImport(), 'dictionary.xlsx');
+        \Session::put('flash_message', 'The word was add to the dictionary');
+        return redirect('home');
     }
 
 
