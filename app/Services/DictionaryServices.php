@@ -17,4 +17,11 @@ class DictionaryServices
         $dictionaryWords->save();
     }
 
+    public function search(Request $request){
+        $word = $request->input('word');
+        $response = Dictionary::orWhere('word' , 'like' , "%".$word.'%')->get()->toArray();
+        return $response;
+
+    }
+
 }

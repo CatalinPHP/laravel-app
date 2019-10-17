@@ -12,6 +12,7 @@
                 <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
             @endif
             @yield('content')
+            <a class="btn btn-primary" href="/home" role="button">Home</a>
         </body>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </html>

@@ -29,9 +29,15 @@ class DictionaryController extends Controller
 
     public function storeFromExcel()
     {
-        Excel::import(new DictionaryImport(), 'dictionary.xlsx');
+        Excel::import(new DictionaryImport(), 'Cuvinte.xlsx');
         \Session::put('flash_message', 'The word was add to the dictionary');
         return redirect('home');
+    }
+
+    public function search(Request $request){
+        $service = new DictionaryServices();
+        $response = $service->search($request);
+        return view('pages/search' )->with('response' , $response);
     }
 
 

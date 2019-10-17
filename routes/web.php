@@ -21,3 +21,5 @@ Route::get('/home',"HomeController@homePage");
 Route::get('/import',"Dictionary\DictionaryController@storeFromExcel");
 Route::post('/store',"Dictionary\DictionaryController@store");
 Route::get('/add/word',"HomeController@addWord");
+Route::get('/searchPage',"HomeController@searchWords");
+Route::post('/search',"Dictionary\DictionaryController@search");

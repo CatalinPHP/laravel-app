@@ -10,14 +10,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm">
-                            {!! Form::submit('Adauga cuvant' , ['class' => 'btn btn-primary form-control']) !!}
-                            {!! link_to('/add/word', $title = null, $attributes = [], $secure = null); !!}
+                            <a class="btn btn-primary" href="/add/word" role="button">Add word</a>
                         </div>
                         <div class="col-sm">
-                            {!! Form::submit('Cauta cuvinte' , ['class' => 'btn btn-primary form-control']) !!}
+                            <a class="btn btn-primary" href="/searchPage" role="button">Search Word</a>
                         </div>
                         <div class="col-sm">
-                            {!! Form::submit('Nou' , ['class' => 'btn btn-primary form-control']) !!}
+                            <a class="btn btn-primary" href="#" role="button">Work in progress</a>
                         </div>
                     </div>
                 </div>
