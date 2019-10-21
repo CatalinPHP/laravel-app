@@ -4,3 +4,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 600px;
+    width: 400px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.all-words{
+    overflow-y:scroll;
+}
+
+.table_title {
+    text-align: center;
+}

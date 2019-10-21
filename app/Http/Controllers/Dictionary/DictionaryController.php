@@ -14,8 +14,8 @@ class DictionaryController extends Controller
 
     public function index()
     {
-        $dictionary = Dictionary::all()->toArray();
-        return $dictionary;
+        $dictionary = Dictionary::where('word', 'like' , '%%')->get()->toArray();
+        return view('pages/all_words' )->with('response' , $dictionary);
     }
 
     public function store(Request $request)
