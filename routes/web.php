@@ -23,3 +23,4 @@ Route::get('/add/word',"HomeController@addWord");
 Route::get('/search',"HomeController@searchWords");
 Route::post('/searchPage',"Dictionary\DictionaryController@search");
 Route::get('/allWords',"Dictionary\DictionaryController@index");
+Route::get('/game',"Dictionary\GameController@getWords");

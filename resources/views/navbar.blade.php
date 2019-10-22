@@ -16,6 +16,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/add/word">Add word</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/game">Play Game</a>
+            </li>
         </ul>
     </div>
 </nav>

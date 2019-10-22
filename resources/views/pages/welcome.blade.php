@@ -12,7 +12,10 @@
 
     <div class="body centered">
         <div >
-            <button class="btn btn-primary btn-game"> Play the game</button>
+            <form action="/game">
+                <button class="btn btn-primary btn-game" type="submit" > Play the game</button>
+            </form>
+
         </div>
     </div>
     </div>

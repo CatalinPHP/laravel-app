@@ -1,6 +1,6 @@
 .centered {
     position: fixed;
-    top:50%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -11,12 +11,13 @@
     width: 400px;
     overflow: auto;
 }
+
 .table-wrapper-scroll-y {
     display: block;
 }
 
-.all-words{
-    overflow-y:scroll;
+.all-words {
+    overflow-y: scroll;
 }
 
 .table_title {
@@ -28,3 +29,20 @@
     margin-left: 6%;
     margin-top: 10%;
 }
+
+/* ========================== Game ===============*/
+
+#btn-game {
+    margin: 10px;
+}
+
+.message p#true{
+    text-align: center;
+    background: green;
+}
+
+.message p#wrong{
+    text-align: center;
+    background: red;
+}
+
