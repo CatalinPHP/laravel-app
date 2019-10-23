@@ -8,7 +8,7 @@ class GameService
     public function getWordsForGame(){
         $allWords = Dictionary::where('word' , 'like' , '%%')->get()->toArray();
         $words = [];
-        for ($i = 0 ; $i < 3 ; $i++){
+        for ($i = 0 ; $i < 5 ; $i++){
             $rand = rand(0,count($allWords));
             array_push($words, $allWords[$rand]);
         }

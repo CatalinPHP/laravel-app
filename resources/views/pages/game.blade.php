@@ -19,6 +19,12 @@
                         </div>
 
                         <div>
+                            <input type="radio" name="word"> {{$words[3]['translated_word']}}<br>
+                        </div>
+                        <div>
+                            <input type="radio" name="word"> {{$words[4]['translated_word']}}<br>
+                        </div>
+                        <div>
                             <input type="radio" name="word"> {{$words[2]['translated_word']}}
                         </div>
                     </div>

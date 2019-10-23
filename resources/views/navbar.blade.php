@@ -6,7 +6,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav justify-content-end" style="width: 100%">
             <li class="nav-item active">
                 <a class="nav-link" href="/search">Search Word</a>
             </li>

@@ -7,8 +7,8 @@ $(function () {
 });
 
 
-$('.shuffle input').on('change', function() {
-    if($('input[name=word]:checked', '.shuffle').val() == 'correct'){
+$('.shuffle input').on('change', function () {
+    if ($('input[name=word]:checked', '.shuffle').val() == 'correct') {
         $('.message').append(
             "<p id='true'> Bravo ! Raspuns Corect </p>"
         )
@@ -16,4 +16,9 @@ $('.shuffle input').on('change', function() {
         $('.message').append(
             "<p id='wrong'> Gresit !  </p>"
         )
+});
+
+$(".nav-item a").on("click", function () {
+    $(".nav-item").find(".active").removeClass("active");
+    $(this).parent().addClass("active");
 });
