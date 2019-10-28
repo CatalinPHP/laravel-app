@@ -3,7 +3,7 @@
 @section("content")
     <div class="body centered">
         <h1>Search</h1>
-        {!!Form::open(['url' => '/search']) !!}
+        {!!Form::open(['url' => '/searchPage']) !!}
         <div class="form-group">
             {!! Form::label('word' , 'Word:') !!}
             {!! Form::text('word', null  , ['class' => 'form-control']) !!}
