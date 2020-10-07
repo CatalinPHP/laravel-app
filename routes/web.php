@@ -24,3 +24,7 @@ Route::get('/search',"HomeController@searchWords");
 Route::post('/searchPage',"Dictionary\DictionaryController@search");
 Route::get('/allWords',"Dictionary\DictionaryController@index");
 Route::get('/game',"Dictionary\GameController@getWords");
+
+Route::get('/image-upload', 'ImageUploadController@imageUpload')->name('image.upload');
+Route::post('/image-upload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');
+Route::post('/delete/image', 'ImageUploadController@imageDelete')->name('image.delete');

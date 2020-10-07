@@ -6,7 +6,9 @@ use App\Services\GameService;
 
 class GameController extends Controller
 {
-
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getWords(){
         $service = new GameService();
         $words = $service->getWordsForGame();

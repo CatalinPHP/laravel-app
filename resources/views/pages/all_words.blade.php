@@ -2,9 +2,9 @@
 
 
 @section("content")
-    <div class="body centered">
+    <div class="body centered box-words">
         <h1 class="table_title">Toate Cuvintele</h1>
-        <div class="my-custom-scrollbar table-wrapper-scroll-y">
+        <div class="my-custom-scrollbar table-wrapper-scroll-y all-words">
             @isset($response)
                 <table class="table table-bordered table-striped mb-0">
                     <thead>

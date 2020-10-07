@@ -17,18 +17,44 @@
 }
 
 .all-words {
-    overflow-y: scroll;
+    padding: 28px;
 }
 
 .table_title {
     text-align: center;
 }
 
-.quote {
-    width: 20%;
-    margin-left: 6%;
-    margin-top: 10%;
+.word_search {
+    height: 400px;
+    overflow-x: auto;
 }
+
+.last-words {
+    margin: 20px;
+}
+
+.last-words-title {
+    height: 14%;
+    background: cornflowerblue;
+    color: white;
+    text-align: center;
+    padding-top: 3%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+#latest-word {
+    text-align: center;
+}
+
+.centered-add-word {
+    width: 35%;
+    height: 90%;
+    margin-top: 2%;
+    margin-left: 30%;
+}
+
+/*  ========================== Images =============== */
 
 /* ========================== Game ===============*/
 
@@ -36,13 +62,23 @@
     margin: 10px;
 }
 
-.message p#true{
+.message p#true {
     text-align: center;
     background: green;
 }
 
-.message p#wrong{
+.message p#wrong {
     text-align: center;
     background: red;
 }
 
+@media (max-width: 600px) {
+
+    .all-words {
+        padding: 28px;
+    }
+
+    .box-words {
+        margin-top: 20%;
+    }
+}

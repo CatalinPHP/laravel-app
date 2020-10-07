@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Services\DictionaryServices;
+use Illuminate\Support\Facades\File;
+
 /**
  * Class HomeController
  * @package App\Http\Controllers
@@ -11,7 +14,14 @@ class HomeController extends Controller
      */
     public function homePage()
     {
-        return view("pages.welcome");
+
+        $message = request()->input('message') ?? null;
+        $images  = File::allFiles(public_path('images'));
+        return view("pages.welcome")->with([
+            'images'  => $images,
+            'message' => $message,
+        ]);
+
     }
 
     /**
@@ -19,7 +29,9 @@ class HomeController extends Controller
      */
     public function addWord()
     {
-        return view("pages.add_word");
+        $service = new DictionaryServices();
+//        dd( $service->latestWords());
+        return view("pages.add_word")->with('words', $service->latestWords());
     }
 
     /**
@@ -29,9 +41,4 @@ class HomeController extends Controller
     {
         return view("pages.search");
     }
-
-    public function gamePage(){
-
-    }
-
 }

@@ -12,13 +12,20 @@ use Illuminate\Session;
 class DictionaryController extends Controller
 {
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
-        $dictionary = Dictionary::where('word', 'like' , '%%')
+        $dictionary = Dictionary::where('word', 'like', '%%')
                                 ->orderBy('word')->get()->toArray();
-        return view('pages/all_words' )->with('response' , $dictionary);
+        return view('pages/all_words')->with('response', $dictionary);
     }
 
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(Request $request)
     {
         $service = new DictionaryServices();
@@ -28,6 +35,9 @@ class DictionaryController extends Controller
         return redirect('home');
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function storeFromExcel()
     {
         Excel::import(new DictionaryImport(), 'Cuvinte.xlsx');
@@ -35,11 +45,14 @@ class DictionaryController extends Controller
         return redirect('home');
     }
 
-    public function search(Request $request){
-        $service = new DictionaryServices();
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function search(Request $request)
+    {
+        $service  = new DictionaryServices();
         $response = $service->search($request);
-        return view('pages/search' )->with('response' , $response);
+        return view('pages/search')->with('response', $response);
     }
-
-
 }
